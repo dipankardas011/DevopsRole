@@ -6,7 +6,8 @@ NOTE: If the data is not available for a specific date then the program Fails
 
 import requests
 import sys
-
+import os
+# from datetime import date
 ''' 
 getCO2() fetches CO2 data from the API.
 This function takes 1 argument as input, date. 
@@ -23,4 +24,6 @@ def getCO2(date):
     sys.exit("Data not found for this date")
 
 
-print(getCO2("2022-02-13"))
+# t = str(date.today())
+t = os.getenv('today')
+print(getCO2(t))

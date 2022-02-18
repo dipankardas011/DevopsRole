@@ -5,7 +5,8 @@ Calculates Foreign Exchange Rates of currencies as per USD
 
 import requests
 import sys
-
+# from datetime import date
+import os
 '''
 getFX() fetches the Foreign exchange rates for currencies.
 It takes 2 arguments as input, "ccy" and "dates"
@@ -16,10 +17,9 @@ dates have to be in format yyyy-mm-dd
 '''
 
 def getFX(ccy,date):
-
   url = 'http://currencies.apps.grandtrunk.net/getrate/'
   u = url+date+'/'+ccy+'/USD'
   return requests.get(u).json()
 
 
-getFX("GBP","2022-02-13")
+print(getFX("GBP", os.getenv('today')))
