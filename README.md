@@ -14,6 +14,7 @@ which will run whenever there is a pull, push request
 
 
 ### Output
+![](./outDocker.png)
 ![](./outTask_1.png)
 ![](./outTask_1i.png)
 
