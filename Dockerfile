@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
-RUN apt-get update -y && apt-get install -y python-pip python-dev
+RUN apt-get update -y && apt-get upgrade -y && \
+     apt install python3-pip python3-dev -y
 
 # COPY ./requirements.txt /app/requirements.txt
 COPY . /app

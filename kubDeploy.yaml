@@ -22,7 +22,28 @@ spec:
         image: nginx:latest
         resources:
           limits:
-            memory: "128Mi"
+            memory: "500Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+
+---
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: refreshAPI
+spec:
+  schedule: "0 12 * * *"
+  ttlSecondsAfterFinished: 100
+  template:
+    spec: 
+      containers:
+        - name: hh
+          image: busybox
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+
+...
