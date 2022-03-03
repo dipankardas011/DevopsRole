@@ -15,4 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dipugodocker/co2app:$(date +%s)
+      run: 
+        - docker login -u dipugodocker -p ${{DOCKER_PASS}}
+        - docker build . --file Dockerfile --tag dipugodocker/co2app:$(date +%s)
+        - docker push dipugodocker/co2app:$(date +%s)
