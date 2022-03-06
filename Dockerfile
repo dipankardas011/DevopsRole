@@ -9,5 +9,6 @@ WORKDIR /app
 
 RUN pip install -U Flask
 RUN pip3 install requests
+RUN ["chmod", "+x", "/app/exec.sh"]
 
 CMD [ "./exec.sh" ]
