@@ -26,3 +26,8 @@ if it fails it will check for todays previous day
 if not then yesterday's yesterday and so on
 
 ![](./outTask_2.png)
+
+## CI/CD
+`Used the github actions`
+
+<img width="645" alt="image" src="https://user-images.githubusercontent.com/65275144/156911286-bf796532-d54c-45cc-b812-fbc5fb655d4c.png">
