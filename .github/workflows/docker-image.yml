@@ -15,7 +15,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: 
-        - docker login -u dipugodocker -p ${{DOCKER_PASS}}
-        - docker build . --file Dockerfile --tag dipugodocker/co2app:$(date +%s)
-        - docker push dipugodocker/co2app:$(date +%s)
+      env:
+        SUPER_SECRET: ${{ secrets.DOCKER_PASS }}
+      run: |
+        docker login -u dipugodocker -p "$SUPER_SECRET"
+        docker build . --file Dockerfile --tag dipugodocker/co2app:$(date +%h)
+        docker run dipugodocker/co2app:$(date +%h)
+        docker push dipugodocker/co2app:$(date +%h)
+
+...
